@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Clone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="stylesheet" href="name.css">
+</head>
+<body>
+
+    <aside class="sidebar" id="app-sidebar">
+        
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <span class="material-symbols-outlined">sparkles</span>
+                <span class="text-label">Gemini</span>
+            </div>
+            <button class="icon-btn" id="toggle-sidebar" title="Collapse menu">
+                <span class="material-symbols-outlined">left_panel_close</span>
+            </button>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#" class="nav-item active">
+                <span class="material-symbols-outlined">edit_square</span>
+                <span class="text-label">New chat</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">search</span>
+                <span class="text-label">Search chats</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">smart_display</span>
+                <span class="text-label">Videos</span>
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">grid_view</span>
+                <span class="text-label">Library</span>
+            </a>
+        </nav>
+
+        <div class="section-title">Notebooks</div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-item">
+                <span class="material-symbols-outlined">add</span>
+                <span class="text-label">New notebook</span>
+            </a>
+        </nav>
+
+        <div class="section-title">Recents</div>
+        <div class="recents-list">
+            <div class="recent-item">
+                <span class="text-label">build this animated sidebar in html, css...</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Icon Identification and Usage</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Identifying and Replacing Icon</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Google's SVG Icon Sources</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Greeting and Offer of Assistance</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Untitled</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Cover Letter for Frontend Internship</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Frontend Password Validation Challeng...</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">HTML/CSS Code Output Analysis</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Public Figure Image Restrictions</span>
+            </div>
+            <div class="recent-item">
+                <span class="text-label">Public Figure Image Request Refused</span>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <div class="avatar">R</div>
+                <div class="user-info text-label">
+                    <span class="user-name">Rakshith G</span>
+                    <span class="user-badge">Pro</span>
+                </div>
+            </div>
+            <button class="icon-btn text-label">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="top-bar">
+            <button class="icon-btn">
+                <span class="material-symbols-outlined">edit_square</span>
+            </button>
+        </div>
+
+        <div class="content-body">
+            <h1 class="greeting">What's next, Rakshith?</h1>
+            
+            <div class="prompt-container">
+                <button class="add-btn">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+                
+                <input type="text" class="prompt-input" placeholder="Ask Gemini">
+                
+                <div class="model-selector">
+                    Pro Extended
+                    <span class="material-symbols-outlined" style="font-size: 20px;">expand_more</span>
+                </div>
+                
+                <button class="icon-btn" style="margin-left: 8px;">
+                    <span class="material-symbols-outlined">mic</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="name.js"></script>
+</body>
+</html>

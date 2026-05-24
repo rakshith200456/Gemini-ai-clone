@@ -1,0 +1,324 @@
+/* CSS Reset & Base Variables */
+:root {
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 68px;
+    --sidebar-bg: #f0f4f9;
+    --main-bg: #ffffff;
+    --text-primary: #1f1f1f;
+    --text-secondary: #444746;
+    --hover-bg: #e1e5ea;
+    --accent-blue: #a8c7fa;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-primary);
+    background-color: var(--main-bg);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* --- Sidebar Styles --- */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-shrink: 0;
+}
+
+.sidebar.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+/* Hide text elements when sidebar is collapsed */
+.sidebar.collapsed .text-label, 
+.sidebar.collapsed .section-title,
+.sidebar.collapsed .user-info {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    height: 64px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.logo-container .material-symbols-outlined {
+    color: #d96570; /* Sparkle color approximation */
+    font-variation-settings: 'FILL' 1;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Sidebar Navigation Items */
+.nav-menu {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 24px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 14px;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.nav-item.active {
+    background-color: var(--hover-bg);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 16px 16px 8px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Recents List */
+.recents-list {
+    flex-grow: 1;
+    padding: 0 8px;
+    overflow-y: auto;
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.recent-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.sidebar.collapsed .recent-item {
+    justify-content: center;
+    padding: 10px 0;
+}
+
+/* Sidebar Footer (User Profile) */
+.sidebar-footer {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #5bb974;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.user-badge {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* --- Main Content Styles --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Recreating the soft radial blue glow background */
+    background: radial-gradient(circle at 50% 50%, #e8f0fe 0%, #ffffff 60%);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 24px;
+}
+
+.content-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Greeting */
+.greeting {
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Input Box (Prompt Area) */
+.prompt-container {
+    width: 100%;
+    background-color: white;
+    border-radius: 32px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s;
+}
+
+.prompt-container:focus-within {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.prompt-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 12px;
+    color: var(--text-primary);
+    background: transparent;
+}
+
+.prompt-input::placeholder {
+    color: #757575;
+}
+
+.add-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn .material-symbols-outlined {
+    font-size: 28px;
+}
+
+/* Model Selector Dropdown inside Input Box */
+.model-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+}
+
+.model-selector:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Scrollbar Styling for Sidebar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd0d6;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #aab0b7;
+}
